@@ -1,7 +1,8 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import "./global.css";
+
+import "./index.css";
 import Loading from "./Loading.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

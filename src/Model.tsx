@@ -14,7 +14,7 @@ import { div } from "three/webgpu";
 import * as THREE from "three";
 
 function ReactModel({ isMobile }) {
-  const reactModel = useGLTF("./scene.gltf");
+  const reactModel = useGLTF("./model/scene.gltf");
 
   // const soundEffects = [
   //   new Audio("/sounds/public_sounds_hit1.ogg"),
@@ -23,7 +23,6 @@ function ReactModel({ isMobile }) {
   //   new Audio("/sounds/public_sounds_hit4.ogg"),
   //   new Audio("/sounds/public_sounds_hit6.ogg"),
   // ];
-
 
 
 
@@ -38,11 +37,11 @@ function ReactModel({ isMobile }) {
         })
       }
     >
-      <hemisphereLight intensity={2} groundColor="black" color={"#00d8ff"}/>
+      <hemisphereLight intensity={2} groundColor="black"/>
       <primitive
         object={reactModel.scene}
-        scale={isMobile ? 0.75 : 2}
-        rotation={[-0, -2, -0]}
+        scale={isMobile ? 20 : 60}
+        rotation={[-0, 1.3, -0.01]}
       />
     </mesh>
   );
@@ -76,7 +75,7 @@ const Model = () => {
 
   return (
     <div
-      style={{ width: "700px", height: "500px", margin: "auto" }}
+      style={{ width: "950px", height: "500px", margin: "auto" }}
       className="react"
     >
       <Canvas
@@ -96,8 +95,8 @@ const Model = () => {
           /> */}
           <OrbitControls
             enableZoom={false}
-            minPolarAngle={Math.PI / 2}
-            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={0.1} // Prevent flipping upside down
+            maxPolarAngle={Math.PI - 0.1}
           />
           <ReactModel isMobile={isMobile} />
         </Suspense>
