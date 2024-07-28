@@ -24,7 +24,7 @@ function ReactModel({ isMobile }) {
       <hemisphereLight intensity={3} groundColor="black" />
       <primitive
         object={model.scene}
-        scale={isMobile ? 1 : 1}
+        scale={isMobile ? 5 : 1}
         rotation={[-0, 1.3, -0.01]}
       />
     </mesh>
