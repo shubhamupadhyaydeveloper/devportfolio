@@ -8,27 +8,23 @@ import {
   Environment,
 } from "@react-three/drei";
 import CanvasLoader from "./ModelLoader";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { div } from "three/webgpu";
-import * as THREE from "three";
+
+useGLTF.preload("./dog.glb")
 
 function ReactModel({ isMobile }) {
   const reactModel = useGLTF("./reactscene.gltf");
-  const modelRef = useRef<any>(null)
+  const modelRef = useRef<any>(null);
 
+  const model = useGLTF("./dog.glb")
   useFrame(() => {
-    modelRef.current.rotation.y += .01
-  })
+    modelRef.current.rotation.y += 0.01;
+  });
   return (
-    <mesh
-     ref={modelRef}
-    
-    >
-      <hemisphereLight intensity={2} groundColor="black"/>
+    <mesh ref={modelRef} castShadow receiveShadow>
+      <hemisphereLight intensity={3} groundColor="black" />
       <primitive
-        object={reactModel.scene}
-        scale={isMobile ? 2 : 2}
+        object={model.scene}
+        scale={isMobile ? 1 : 1}
         rotation={[-0, 1.3, -0.01]}
       />
     </mesh>
@@ -53,9 +49,7 @@ const Model = () => {
   }, []);
 
   return (
-    <div
-    className="md:mt-[9vh] -mt-[7vh] md:mr-[23vw] md:w-[35vw] md:h-[50vh] w-full items-center"
-    >
+    <div className="md:mt-[9vh] -mt-[7vh] md:mr-[23vw] md:w-[35vw] md:h-[50vh] w-full items-center">
       <Canvas
         frameloop="always"
         shadows
@@ -65,13 +59,10 @@ const Model = () => {
       >
         <Suspense fallback={<CanvasLoader />}>
           <OrbitControls
-            enableZoom={false}
-            minPolarAngle={Math.PI / 2} // Prevent flipping upside down
-            maxPolarAngle={Math.PI / 2}
+            enableZoom={true}
           />
           <ReactModel isMobile={isMobile} />
         </Suspense>
-        <Preload all />
       </Canvas>
     </div>
   );
