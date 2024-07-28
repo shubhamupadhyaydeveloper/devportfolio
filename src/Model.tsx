@@ -15,14 +15,17 @@ import * as THREE from "three";
 
 function ReactModel({ isMobile }) {
   const reactModel = useGLTF("./reactscene.gltf");
-  const modelRef = useRef<any>(null);
+  const modelRef = useRef<any>(null)
 
   useFrame(() => {
-    modelRef.current.rotation.y += 0.007;
-  });
+    modelRef.current.rotation.y += .01
+  })
   return (
-    <mesh ref={modelRef} scale={4}>
-      <hemisphereLight intensity={2} groundColor="black" />
+    <mesh
+     ref={modelRef}
+    
+    >
+      <hemisphereLight intensity={2} groundColor="black"/>
       <primitive
         object={reactModel.scene}
         scale={isMobile ? 2 : 2}
@@ -50,7 +53,9 @@ const Model = () => {
   }, []);
 
   return (
-    <div className="md:mt-[9vh] -mt-[7vh] md:mr-[23vw] md:w-[35vw] md:h-[50vh] w-full items-center">
+    <div
+    className="md:mt-[9vh] -mt-[7vh] md:mr-[23vw] md:w-[35vw] md:h-[50vh] w-full items-center"
+    >
       <Canvas
         frameloop="always"
         shadows
