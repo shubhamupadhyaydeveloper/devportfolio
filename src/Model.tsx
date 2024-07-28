@@ -24,7 +24,7 @@ function ReactModel({ isMobile }) {
       <hemisphereLight intensity={3} groundColor="black" />
       <primitive
         object={model.scene}
-        scale={isMobile ? 5 : 1}
+        scale={isMobile ? 1 : 1}
         rotation={[-0, 1.3, -0.01]}
       />
     </mesh>
@@ -49,7 +49,7 @@ const Model = () => {
   }, []);
 
   return (
-    <div className="md:mt-[9vh] -mt-[7vh] md:mr-[23vw] md:w-[35vw] md:h-[50vh] w-full items-center">
+    <div className="md:mt-[9vh] -mt-[7vh] md:mr-[23vw] md:w-[35vw] md:h-[70vh] w-full h-[50vh] items-center">
       <Canvas
         frameloop="always"
         shadows

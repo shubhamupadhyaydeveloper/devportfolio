@@ -44,7 +44,7 @@ const HeroText = () => {
         </Text>
 
         <div className="leading-[6.7vh]">
-          <div className="flex items-baseline -mb-4 md:-mb-[2.5vh] gap-2">
+          <div className="flex items-baseline -mb-3 md:-mb-[2.5vh] gap-2">
             <Text className="text-white  text-[8vh] small font-bold bg-transparent">
               Interested
             </Text>
@@ -52,7 +52,7 @@ const HeroText = () => {
               in
             </Text>
           </div>
-          <div className="flex gap-3 items-baseline -mb-4 md:-mb-[2.5vh]">
+          <div className="flex gap-3 items-baseline -mb-3 md:-mb-[2.5vh]">
             <Text className="text-[#6EACDA] small text-[25px] font-poppins bg-transparent italic">
               Web
             </Text>
