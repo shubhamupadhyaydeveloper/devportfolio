@@ -1,5 +1,5 @@
-import React, { useEffect, useState, Suspense } from "react";
-import { Canvas, ThreeEvent } from "@react-three/fiber";
+import React, { useEffect, useState, Suspense, useRef } from "react";
+import { Canvas, ThreeEvent, useFrame } from "@react-three/fiber";
 import {
   useGLTF,
   OrbitControls,
@@ -14,50 +14,34 @@ import { div } from "three/webgpu";
 import * as THREE from "three";
 
 function ReactModel({ isMobile }) {
-  const reactModel = useGLTF("./model/scene.gltf");
+  const reactModel = useGLTF("./reactscene.gltf");
+  const modelRef = useRef<any>(null)
 
-  // const soundEffects = [
-  //   new Audio("/sounds/public_sounds_hit1.ogg"),
-  //   new Audio("/sounds/public_sounds_hit2.ogg"),
-  //   new Audio("/sounds/public_sounds_hit3.ogg"),
-  //   new Audio("/sounds/public_sounds_hit4.ogg"),
-  //   new Audio("/sounds/public_sounds_hit6.ogg"),
-  // ];
-
-
-
+  useFrame(() => {
+    modelRef.current.rotation.y += .007
+  })
   return (
     <mesh
-
-      material={
-        new THREE.MeshStandardMaterial({
-          color: 0x2c3e50,
-          roughness: 0.1,
-          metalness: 0.5,
-        })
-      }
+     ref={modelRef}
+    scale={4}
     >
-      <hemisphereLight intensity={2} groundColor="black"/>
+      <sphereGeometry />
+            {/* <torusKnotGeometry  /> */}
+            {/* <meshNormalMaterial wireframe /> */}
+            <meshNormalMaterial  wireframe/>
+
+            {/* <hemisphereLight intensity={2} groundColor="black"/>
       <primitive
         object={reactModel.scene}
-        scale={isMobile ? 20 : 60}
+        scale={isMobile ? 2 : 2}
         rotation={[-0, 1.3, -0.01]}
-      />
+      /> */}
     </mesh>
   );
 }
 
 const Model = () => {
   const [isMobile, setIsMobile] = useState(false);
-
-  useGSAP(() => {
-    // gsap.to(".react", {
-    //   y: 2 * Math.PI, // 360 degrees in radians
-    //   repeat: -1,
-    //   ease: "linear",
-    //   duration: 10,
-    // });
-  }, []);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 500px)");
@@ -75,28 +59,20 @@ const Model = () => {
 
   return (
     <div
-      style={{ width: "950px", height: "500px", margin: "auto" }}
-      className="react"
+    className="md:mt-[9vh] -mt-[7vh] md:mr-[23vw] md:w-[35vw] md:h-[50vh] w-full items-center"
     >
       <Canvas
-        frameloop="demand"
+        frameloop="always"
         shadows
         dpr={[1, 2]}
         camera={{ position: [20, 3, 5], fov: 30, near: 1, far: 40 }}
         gl={{ preserveDrawingBuffer: true, antialias: false }}
       >
         <Suspense fallback={<CanvasLoader />}>
-          {/* <ContactShadows
-            position={[0, -3.5, 0]}
-            opacity={0.65}
-            scale={40}
-            blur={1}
-            far={9}
-          /> */}
           <OrbitControls
             enableZoom={false}
-            minPolarAngle={0.1} // Prevent flipping upside down
-            maxPolarAngle={Math.PI - 0.1}
+            minPolarAngle={Math.PI / 2} // Prevent flipping upside down
+            maxPolarAngle={Math.PI / 2}
           />
           <ReactModel isMobile={isMobile} />
         </Suspense>

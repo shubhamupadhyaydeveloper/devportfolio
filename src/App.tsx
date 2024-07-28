@@ -10,15 +10,16 @@ import { useGSAP } from "@gsap/react";
 import Loading from "./Loading";
 import Model from "./Model";
 import Loadable from "./components/global/Loadable";
-import HeroText from "./components/hero/HeroText";
 import MaxWidthWrapper from "./components/global/MaxWithContainer";
 import { BackgroundBeamsDemo } from "./components/hero/Background";
 import { BackgroundBeams } from "./components/ui/background-beams";
+import Threejs from "./components/hero/Threejs";
 
 const TypewriterEffectSmooth = React.lazy(
   () => import("./components/ui/typewriter-effect")
 );
 const Navbar = Loadable(React.lazy(() => import("./components/hero/Navbar")));
+const HeroText = Loadable(React.lazy(() => import("./components/hero/HeroText")))
 const Data = React.lazy(() => import("./Data"));
 
 function App() {
@@ -41,16 +42,17 @@ function App() {
   return (
     <>
       <MaxWidthWrapper classname="overflow-hidden">
-        <section className="h-screen w-full ">
-          <Navbar />
-          <div className="flex md:flex-row flex-col gap-5 ">
-            <HeroText />
-            <div className="mt-[15vh] -mr-[9vw]">
-              <Model />
-            </div>
+      <section className="h-screen w-full ">
+        <Navbar />
+        <div className="flex md:flex-row flex-col gap-5 ">
+          <HeroText />
+          <div className="mt-[15vh] -mr-[9vw]">
+            <Model />
           </div>
-        </section>
-        <section className="h-screen  w-full"></section>
+        </div>
+      </section>
+      <section className="h-screen  w-full"></section>
+        {/* <Threejs /> */}
       </MaxWidthWrapper>
 
       {/* <div className="flex flex-col items-center justify-center mt-5  ">
