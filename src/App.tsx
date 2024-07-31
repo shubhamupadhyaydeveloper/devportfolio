@@ -44,11 +44,17 @@ function App() {
       <MaxWidthWrapper classname="overflow-hidden">
       <section className="h-screen w-full ">
         <Navbar />
-        <div className="flex md:flex-row flex-col gap-5 ">
+        <div className="flex md:flex-col lg:flex-row flex-col gap-5 ">
           <HeroText />
           <div className="mt-[15vh] -mr-[9vw]">
             <Model />
           </div>
+        </div>
+        <div className="flex mt-[3vh] xl:mt-[15vh] items-center justify-center">
+
+        <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors">
+         Scroll 😁
+      </button>
         </div>
       </section>
       <section className="h-screen  w-full"></section>

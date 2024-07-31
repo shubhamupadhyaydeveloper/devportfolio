@@ -10,6 +10,45 @@
   background-color: black;
 }
 
+.dog {
+  display: flex;
+  color : black;
+  font-family: "Roboto";
+  width: 12vw;
+  margin-top: 50px;
+}
+
+.dog > div {
+  background-color:  white;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 16px;
+}
+
+@media (max-width : 1024px) {
+  .dog {
+    width: 15vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .dog > div {
+     width: 17vw ;
+  }
+}
+
+@media (max-width: 425px) {
+   .dog > div {
+    width: 35vw;
+   }
+}
+@media (max-width: 320px) {
+   .dog > div {
+    width: 41vw;
+   }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -74,4 +113,27 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* dark mode looking scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #555;
+}
+
+::-webkit-scrollbar-thumb {
+	background: black;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #242424;
+}
+
+::selection {
+  background-color: white;
+  color: black;
 }

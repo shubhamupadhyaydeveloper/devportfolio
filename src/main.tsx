@@ -3,19 +3,28 @@ import ReactDOM from "react-dom/client";
 import { ChakraProvider } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 import App from "./App.tsx";
+import { mode } from '@chakra-ui/theme-tools'
 
 import "./index.css";
 import Loading from "./Loading.tsx";
 
-const colors = {
-  brand: {
-    900: '#1a365d',
-    800: '#153e75',
-    700: '#2a69ac',
-  },
+
+const styles = {
+  global: props => ({
+    body: {
+      bg: mode('#f0e7db', '#202023')(props)
+    }
+  })
 }
 
-const theme = extendTheme({ colors })
+
+const config = {
+  initialColorMode: 'dark',
+  useSystemColorMode: true
+}
+
+
+const theme = extendTheme({ styles,config })
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

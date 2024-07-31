@@ -2,7 +2,20 @@ import React from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import MaxWidthWrapper from "../global/MaxWithContainer";
-import { Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
+import {
+  Text as ReactText,
+  Float,
+  Text3D,
+  Clouds,
+  Cloud,
+  OrbitControls,
+  Center,
+} from "@react-three/drei";
+import { Canvas, useThree } from "@react-three/fiber";
+
+
+
 
 const HeroText = () => {
   useGSAP(() => {
@@ -22,6 +35,7 @@ const HeroText = () => {
         },
       }
     );
+
     // gsap.fromTo(
     //   ".name",
     //   { x: -100, opacity: 0, rotate: -10 },
@@ -38,48 +52,31 @@ const HeroText = () => {
 
   return (
     <MaxWidthWrapper classname="mt-[30vh]">
-      <div className="flex flex-col">
-        <Text className="text-[#6EACDA] small font-poppins  italic bg-transparent">
-          Shubham Upadhyay
+      <Box
+        width={{ base: "400px", md: "500px", lg: "300px", xl: "500px" }}
+        className="-ml-2 leading-tight"
+      >
+        <Text className="text-[#379777] font-inter small flex flex-wrap text-[15px] md:text-[20px]">
+          Hey, My name is Shubham Upadhyay
         </Text>
-
-        <div className="leading-[6.7vh]">
-          <div className="flex items-baseline -mb-3 md:-mb-[2.5vh] gap-2">
-            <Text className="text-white  text-[8vh] small font-bold bg-transparent">
-              Interested
-            </Text>
-            <Text className="text-[#6EACDA] small 2xl:text-[25px] text-[20px] lg:text-[25px] font-poppins bg-transparent italic">
-              in
-            </Text>
-          </div>
-          <div className="flex gap-3 items-baseline -mb-3 md:-mb-[2.5vh]">
-            <Text className="text-[#6EACDA] small text-[25px] font-poppins bg-transparent italic">
-              Web
-            </Text>
-            <Text className="text-white text-[7vh] small font-bold md:text-[4vh] ">
-              &
-            </Text>
-            <Text className="text-white lg:text-[6vh] md:text-[4vh] 2xl:text-[7vh] small bg-transparent text-[7vh] font-bold">
-              Mobile
-            </Text>
-          </div>
-          <div className="flex items-baseline md:gap-3 gap-2 xl:gap-2 2xl:gap-2">
-            <Text className="text-white md:text-[4vh] lg:text-[6vh] xl:text-[6vh] 2xl:text-[7vh] text-[4vh] bg-transparent small font-bold">
-              Development
-            </Text>
-            <Text className="text-[#6EACDA] small lg:text-[21px] italic text-[20px] 2xl:text-[25px] bg-transparent">
-              From India
-            </Text>
-          </div>
-        </div>
-      </div>
-      <div className="md:mt-[5vh] mt-[5vh]">
-        <h1 className="text-[25px] font-poppins small text-white md:w-[45vw] lg:w-[45vw] lg:text-[25px] 2xl:text-[25px] md:text-[25px] xl:w-[35vw] 2xl:w-[30vw]">
-          A <span className="text-[#6EACDA]">JavaScript</span> enthusiast and
-          love to <span className="text-[#6EACDA]">React Native, React</span>,
-          Express for backend with MongoDB.
-        </h1>
-      </div>
+        <Text className="text-white font-poppins small font-bold flex flex-wrap text-[32px] md:text-[32px]">
+          I am Interested in Working
+        </Text>
+        <Text className="text-white font-poppins small font-bold text-[32px] flex flex-wrap md:text-[32px]">
+          Web And Mobile Development{" "}
+        </Text>
+        <Text className="text-white font-poppins small font-bold text-[32px] md:text-[32px]">
+           And Loved React
+        </Text>
+        <Text className="text-[#379777] font-inter small  text-[15px] md:text-[20px]">
+          Based in India
+        </Text>
+        <Box className="mt-[5vw] flex flex-wrap" 
+         width={{ base: "350px", md: "500px", lg: "300px", xl: "500px" }} >
+           <Text className="font-poppins font-bold text-[15px] small md:text-[20px]">Loved to work in Typescript , React , Express for Backend and Mongoddb for database</Text>
+        </Box>
+     
+      </Box>
     </MaxWidthWrapper>
   );
 };

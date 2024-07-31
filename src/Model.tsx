@@ -6,6 +6,8 @@ import {
   Preload,
   ContactShadows,
   Environment,
+  TransformControls,
+  Html
 } from "@react-three/drei";
 import CanvasLoader from "./ModelLoader";
 
@@ -20,14 +22,21 @@ function ReactModel({ isMobile }) {
     modelRef.current.rotation.y += 0.01;
   });
   return (
-    <mesh ref={modelRef} castShadow receiveShadow>
+    <>
+    <mesh ref={modelRef}  >
       <hemisphereLight intensity={3} groundColor="black" />
       <primitive
         object={model.scene}
-        scale={isMobile ? 1 : 1}
-        rotation={[-0, 1.3, -0.01]}
+        scale={isMobile ? .9 : .9}
+        rotation={[-0, 1.1, -0.01]}
       />
     </mesh>
+    <Html
+     wrapperClass="dog"
+    >
+        Hi, I am dog 👍
+    </Html>
+    </>
   );
 }
 
@@ -49,7 +58,7 @@ const Model = () => {
   }, []);
 
   return (
-    <div className="md:mt-[9vh] -mt-[7vh] md:mr-[23vw] md:w-[35vw] md:h-[70vh] w-full h-[50vh] items-center">
+    <div className="md:-mt-[12vh] lg:mt-[9vh] -mt-[12vh] md:ml-[12vw] lg:absolute lg:right-[10vw] -ml-[5vw] md:w-[55vw] xl:w-[29vw] lg:w-[37vw] 2xl:w-[23vw]  md:h-[70vh] w-full h-[50vh] items-center">
       <Canvas
         frameloop="always"
         shadows
