@@ -51,10 +51,10 @@ const HeroText = () => {
   }, []);
 
   return (
-    <MaxWidthWrapper classname="mt-[30vh]">
+    <MaxWidthWrapper classname="mt-[30vh] w-full ">
       <Box
-        width={{ base: "400px", md: "500px", lg: "300px", xl: "500px" }}
-        className="-ml-2 leading-tight"
+        
+        className="leading-tight"
       >
         <Text className="text-[#379777] font-inter small flex flex-wrap text-[15px] md:text-[20px]">
           Hey, My name is Shubham Upadhyay
@@ -72,8 +72,8 @@ const HeroText = () => {
           Based in India
         </Text>
         <Box className="mt-[5vw] flex flex-wrap" 
-         width={{ base: "350px", md: "500px", lg: "300px", xl: "500px" }} >
-           <Text className="font-poppins font-bold text-[15px] small md:text-[20px]">Loved to work in Typescript , React , Express for Backend and Mongoddb for database</Text>
+         width={{ base: "310px", md: "500px", lg: "300px", xl: "500px" }} >
+           <Text className="font-poppins font-bold text-[15px] small text-white md:text-[20px]">Loved to work in Typescript , React , Express for Backend and Mongoddb for database</Text>
         </Box>
      
       </Box>

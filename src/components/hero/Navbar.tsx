@@ -1,11 +1,8 @@
 import React, { useRef, useState } from "react";
 import { gsap } from "gsap";
-import { Flip } from "gsap/Flip";
 import MaxWidthWrapper from "../global/MaxWithContainer";
 import { Box, Text } from "@chakra-ui/react";
 import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(Flip);
 
 const Navbar = () => {
   const [active, SetActive] = useState<string>("Home");
@@ -37,19 +34,21 @@ const Navbar = () => {
   });
 
   return (
-    <div className="fixed z-[10] flex justify-center inset-x-0 top-0 items-center backdrop-blur-md bg-black/5 transition-all ">
-      <Box className="flex justify-between w-[50vw] mt-5 items-center  backdrop-blur-md bg-black/0">
+    <div className="fixed z-[30] flex justify-center inset-x-0 top-0 items-start md:items-center backdrop-blur-md bg-black/5 transition-all ">
+      <MaxWidthWrapper classname="flex justify-between w-full px-3 mt-5 items-center  backdrop-blur-md bg-black/0">
+
+   
         <div
           className="font-poppins text-[20px] flex flex-col gap-2 font-bold bg-black/0 cursor-pointer h-[23px] overflow-hidden"
           ref={textRef}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="name">SU.</div>
-          <div className="name name2">SU.</div>
+          <div className="name text-white">SU.</div>
+          <div className="name name2 text-white">SU.</div>
        
         </div>
-        <div className="bg-gray-900 hidden md:flex justify-between items-center w-full max-w-screen-sm rounded-full transition-all">
+        <div className="bg-gray-900 hidden lg:flex justify-between items-center w-full md:w-[65vw] lg:w-[50vw] max-w-screen-sm rounded-full transition-all">
           {links.map((item) => (
             <a
               href="#"
@@ -70,7 +69,10 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-      </Box>
+           <div>
+            dark mode
+           </div>
+      </MaxWidthWrapper>
     </div>
   );
 };

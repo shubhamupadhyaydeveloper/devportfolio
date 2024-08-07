@@ -11,9 +11,10 @@ import Loading from "./Loading";
 import Model from "./Model";
 import Loadable from "./components/global/Loadable";
 import MaxWidthWrapper from "./components/global/MaxWithContainer";
-import { BackgroundBeamsDemo } from "./components/hero/Background";
-import { BackgroundBeams } from "./components/ui/background-beams";
-import Threejs from "./components/hero/Threejs";
+
+import Hero from "./components/hero/Hero";
+import About from "./components/about/About";
+import ProfileImg from "./components/about/ProfileImg";
 
 const TypewriterEffectSmooth = React.lazy(
   () => import("./components/ui/typewriter-effect")
@@ -41,25 +42,26 @@ function App() {
 
   return (
     <>
-      <MaxWidthWrapper classname="overflow-hidden">
-      <section className="h-screen w-full ">
-        <Navbar />
-        <div className="flex md:flex-col lg:flex-row flex-col gap-5 ">
-          <HeroText />
-          <div className="mt-[15vh] -mr-[9vw]">
-            <Model />
-          </div>
-        </div>
-        <div className="flex mt-[3vh] xl:mt-[15vh] items-center justify-center">
+    <MaxWidthWrapper classname="">
 
-        <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors">
-         Scroll 😁
-      </button>
+    
+         <Hero />
+
+      <section id="about" className="w-full h-[100vh] mx-auto mt-[35vh] md:mt-[0vh]">
+        <div className="w-full flex justify-between md:flex-col flex-col lg:flex-row items-center ">
+       <div className="flex-[2]">
+        <About />
+       </div>
+       <div className="flex-1 h-full mt-[5vh] md:mt-[5vh] lg:mt-[0vh] ml-[5vw] items-center">
+        <ProfileImg />
+       </div>
         </div>
       </section>
-      <section className="h-screen  w-full"></section>
-        {/* <Threejs /> */}
-      </MaxWidthWrapper>
+
+    </MaxWidthWrapper>
+
+
+   
 
       {/* <div className="flex flex-col items-center justify-center mt-5  ">
        
