@@ -31,15 +31,13 @@ const Hero = () => {
   
   return (
     <section
-      className="w-full h-screen flex flex-col md:mb-[50vh] lg:mb-[0vh] mt-[5vh]"
+      className="w-[full] h-screen flex flex-col md:mb-[30vh] lg:mb-[0vh] mt-[5vh]"
       id="home"
     >
       <Navbar />
-      <div className="flex md:flex-col lg:flex-row flex-col gap-10 ">
-        <div className="">
+      <div className="flex md:flex-col lg:flex-row flex-col  ">
           <HeroText />
-        </div>
-        <div className="mt-[15vh] -mr-[9vw]">
+        <div className="mt-[15vh] ">
           <Model />
         </div>
       </div>

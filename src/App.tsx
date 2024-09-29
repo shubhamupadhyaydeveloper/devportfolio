@@ -18,6 +18,7 @@ import ProfileImg from "./components/about/ProfileImg";
 import { useColorModeValue } from "@chakra-ui/react";
 import {ScrollTrigger} from "gsap/all";
 import Stackpage from "./components/stack/Stackpage";
+import Footer from "./components/footer/footer";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -76,6 +77,7 @@ useGSAP(() => {
         >
          <Stackpage />
         </section>
+        <Footer />
       </MaxWidthWrapper>
     </>
   );

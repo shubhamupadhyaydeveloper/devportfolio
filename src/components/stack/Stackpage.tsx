@@ -44,12 +44,12 @@ const Stackpage = () => {
         <div
           className={`name text-[${textColor}] font-poppins font-bold text-[6vh]`}
         >
-          Technology
+          Projects
         </div>
         <div
           className={`name name2 text-[${textColor}] font-poppins font-bold text-[6vh]`}
         >
-          Technology
+          Projects
         </div>
       </div>
     </>
