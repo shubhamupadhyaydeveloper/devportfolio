@@ -6,10 +6,6 @@
 @tailwind utilities;
 
 
-* {
-  background-color: black;
-}
-
 .dog {
   display: flex;
   color : black;
@@ -136,4 +132,61 @@
 ::selection {
   background-color: white;
   color: black;
+}
+
+
+.navbar {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.nav-item {
+  padding: 10px 20px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1; /* Ensure it is above the active-bg */
+  transition: color 0.3s ease;
+  color: white;
+}
+
+.nav-item.active {
+  color: white; /* Style for the active item */
+}
+
+
+.navbar ul {
+  position: relative;
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  /* Make sure items are above the background */
+}
+
+.active-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: green;
+  border-radius: 50px;
+  z-index: 0;
+  /* Make sure the background is behind the nav items */
+  transition: transform 0.3s ease, width 0.3s ease;
 }

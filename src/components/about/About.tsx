@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Text } from "@chakra-ui/react";
+import { Text, useColorModeValue } from "@chakra-ui/react";
 import MaxWidthWrapper from "../global/MaxWithContainer";
 import ProfileImg from "./ProfileImg";
 
@@ -33,6 +33,8 @@ const About = () => {
     });
   });
 
+  const textColor = useColorModeValue('black','white')
+
   return (
   <>
       <div className="flex items-start w-full ">
@@ -42,10 +44,10 @@ const About = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="name text-white font-poppins font-bold text-[6vh]">
+          <div className={`name text-[${textColor}] font-poppins font-bold text-[6vh]`}>
             About
           </div>
-          <div className="name name2 text-white font-poppins font-bold text-[6vh]">
+          <div className={`name name2 text-[${textColor}] font-poppins font-bold text-[6vh]`}>
             About
           </div>
         </div>
@@ -56,7 +58,7 @@ const About = () => {
           Hi, I'm Shubham Upadhyay, a passionate Full-Stack Developer
           specializing in React for both web and mobile applications. I
           grew up in Delhi and began my coding journey in the middle of class
-          10, quickly discovering my love for creating impactful digital
+          11, quickly discovering my love for creating impactful digital
           experiences. Currently, I'm pursuing a degree in Computer Science with
           a focus on Data Analytics at IIT Patna. Here, I am honing my skills in
           full-stack development and working on various exciting projects, such
