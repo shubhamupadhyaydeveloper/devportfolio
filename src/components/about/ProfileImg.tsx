@@ -10,8 +10,8 @@ const ProfileImg = () => {
 
     <div className="card relative ">
       <div className="content w-full">
-        <div className="front rounded-2xl absolute left-0">
-            <Image src="./profile.jpg" width={"340px"} height={"280px"} className="rounded-2xl"/>
+        <div className="front rounde absolute left-0">
+            <Image src="./profile.jpg" width={"340px"} height={"280px"} className=""/>
         </div>
         <div className="back bg-[#379777] text-white font-poppins font-bold">
             Hi 👋 Nice to Meet You

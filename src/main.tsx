@@ -11,13 +11,13 @@ import Loading from "./Loading.tsx";
 const styles = {
   global: (props) => ({
     body: {
-      bg: mode("#EEF7FF", "black")(props),
+      bg: mode("#D1E9F6", "black")(props),
     },
   }),
 };
 
 const config = {
-  initialColorMode: "dark",
+  initialColorMode: "light",
   useSystemColorMode: true,
 };
 

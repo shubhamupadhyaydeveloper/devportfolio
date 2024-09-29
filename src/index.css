@@ -184,7 +184,7 @@ ul {
   top: 0;
   left: 0;
   height: 100%;
-  background-color: green;
+  background-color: #02CCFE;
   border-radius: 50px;
   z-index: 0;
   /* Make sure the background is behind the nav items */
