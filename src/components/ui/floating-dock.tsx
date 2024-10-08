@@ -4,7 +4,7 @@
  * Mobile navbar is better positioned at bottom right.
  **/
 
-import { cn } from "src/lib/utils";
+import { cn } from "../../lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import {
   AnimatePresence,
@@ -14,7 +14,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
 
 export const FloatingDock = ({
@@ -68,7 +68,7 @@ const FloatingDockMobile = ({
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
                 <Link
-                  href={item.href}
+                  to={item.href}
                   key={item.title}
                   className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
                 >
@@ -167,7 +167,7 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link href={href}>
+    <Link to={href}>
       <motion.div
         ref={ref}
         style={{ width, height }}

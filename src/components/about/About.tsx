@@ -58,7 +58,7 @@ const About = () => {
       </div>
 
       <div className="mt-[5vh] font-poppins text-[20px] md:text-[20px] lg:text-[17px] xl:text-[20px]">
-        <h1 className="text-start">
+        <h1 className="text-start text-[#7A7A7A]">
           Hi, I'm Shubham Upadhyay, a passionate Full-Stack Developer
           specializing in React for both web and mobile applications. I grew up
           in Delhi and began my coding journey in the middle of class 11,

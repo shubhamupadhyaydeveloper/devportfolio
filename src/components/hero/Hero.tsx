@@ -31,7 +31,7 @@ const Hero = () => {
   
   return (
     <section
-      className="w-[full] h-screen flex flex-col md:mb-[30vh] lg:mb-[0vh] mt-[5vh]"
+      className="w-[full] h-[80vh] flex flex-col md:mb-[30vh] mt-[5vh]"
       id="home"
     >
       <Navbar />
@@ -41,13 +41,7 @@ const Hero = () => {
           <Model />
         </div>
       </div>
-      <div className="flex items-center z-10 justify-center">
-        <button
-          className={`"inline-flex button -mt-[5vh] lg:mt-[10vh] xl:mt-[15vh] h-12 animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,${colorValue},45%,${colorValue},55%,${colorValue})] bg-[length:200%_100%] px-6 font-medium text-[${colorValue}] transition-colors"`}
-        >
-          Scroll 😁
-        </button>
-      </div>
+
     </section>
   );
 };

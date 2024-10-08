@@ -86,10 +86,10 @@ const Navbar = () => {
   const textColor = useColorModeValue("black", "white");
 
   return (
-    <div className="fixed z-[30] bar flex justify-center inset-x-0 top-0 items-start md:items-center backdrop-blur-md  transition-all ">
-      <MaxWidthWrapper classname="flex bar justify-between w-full px-3 mt-5 items-center  backdrop-blur-md bg-black/0">
+    <div className="fixed z-[30] bar flex justify-center inset-x-0 top-0 items-start md:items-center backdrop-blur-md bg-[#262626]  transition-all ">
+      <MaxWidthWrapper classname="flex bar mb-3 justify-between w-full px-3 mt-5 items-center  backdrop-blur-md bg-black/0">
         <div
-          className="font-poppins text-[20px]bar flex flex-col gap-2 font-bold bg-black/0 cursor-pointer h-[23px] overflow-hidden"
+          className="font-poppins  text-[20px]bar flex flex-col gap-2 font-bold bg-black/0 cursor-pointer h-[23px] overflow-hidden"
           ref={textRef}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -97,13 +97,13 @@ const Navbar = () => {
           <div className={`name bar text-[${textColor}]`}>SU.</div>
           <div className={`name bar name2 text-[${textColor}]`}>SU.</div>
         </div>
-        <div>
-          <nav className="navbar bg-gray-700 rounded-full">
+        <div className="hidden md:block">
+          <nav className="navbar rounded-full">
             <ul>
               {navItems.map((item, index) => (
                 <li
                   key={index}
-                  className={`nav-item ${chageColor} ${
+                  className={`nav-item font-poppins font-thin ${chageColor} ${
                     index === activeIndex ? "active" : ""
                   }`}
                   onClick={() => setActiveIndex(index)}

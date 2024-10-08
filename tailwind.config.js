@@ -1,7 +1,3 @@
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -18,32 +14,9 @@ module.exports = {
       padding: "2rem",
       screens: {
         "2xl": "1400px",
-        "xs" : "400px"
       },
-    },
-    "animation": {
-      shimmer: "shimmer 2s linear infinite"
-    },
-    "keyframes": {
-      shimmer: {
-        from: {
-          "backgroundPosition": "0 0"
-        },
-        to: {
-          "backgroundPosition": "-200% 0"
-        }
-      }
     },
     extend: {
-
-
-      fontFamily: {
-        roboto: ['Roboto', 'sans-serif'],
-        poppins : ['Poppins','sans-serif'],
-        anton : ['Anton','sans-serif'],
-        inter : ['Inter','sans-serif']
-      },
-      
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -100,16 +73,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"),addVariablesForColors],
-}
-
-function addVariablesForColors({ addBase, theme }) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-  );
- 
-  addBase({
-    ":root": newVars,
-  });
+  plugins: [require("tailwindcss-animate")],
 }

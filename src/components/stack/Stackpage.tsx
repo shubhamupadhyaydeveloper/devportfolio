@@ -51,6 +51,7 @@ const Stackpage = () => {
         >
           Projects
         </div>
+        <h1 className="text-white">hello stack end</h1>
       </div>
     </>
   );
