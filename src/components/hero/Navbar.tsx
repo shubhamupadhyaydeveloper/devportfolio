@@ -94,8 +94,8 @@ const Navbar = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className={`name bar text-[${textColor}]`}>SU.</div>
-          <div className={`name bar name2 text-[${textColor}]`}>SU.</div>
+          <div className={`name bar text-white `}>SU.</div>
+          <div className={`name bar name2 text-white`}>SU.</div>
         </div>
         <div className="hidden md:block">
           <nav className="navbar rounded-full">
@@ -103,7 +103,7 @@ const Navbar = () => {
               {navItems.map((item, index) => (
                 <li
                   key={index}
-                  className={`nav-item font-poppins font-thin ${chageColor} ${
+                  className={`nav-item ${chageColor} ${
                     index === activeIndex ? "active" : ""
                   }`}
                   onClick={() => setActiveIndex(index)}

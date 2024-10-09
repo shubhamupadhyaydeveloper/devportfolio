@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import MaxWidthWrapper from "../global/MaxWithContainer";
 import { Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import { FloatingDock } from "../ui/floating-dock";
 import {
   Text as ReactText,
   Float,
@@ -12,9 +13,65 @@ import {
   OrbitControls,
   Center,
 } from "@react-three/drei";
+import {
+  IconBrandGithub,
+  IconBrandX,
+  IconExchange,
+  IconHome,
+  IconNewSection,
+  IconTerminal2,
+} from "@tabler/icons-react";
 import { Canvas, useThree } from "@react-three/fiber";
 
 const HeroText = () => {
+  
+  const links = [
+    {
+      title: "Home",
+      icon: (
+        <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+
+    {
+      title: "Products",
+      icon: (
+        <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "Components",
+      icon: (
+        <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+
+    {
+      title: "Changelog",
+      icon: (
+        <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+
+    {
+      title: "Twitter",
+      icon: (
+        <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "GitHub",
+      icon: (
+        <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+  ];
   useGSAP(() => {
     gsap.timeline().fromTo(
       ".small",
@@ -38,7 +95,7 @@ const HeroText = () => {
 
 
   return (
-    <Box className="mt-[15vh] md:mt-[30vh] w-full leading-tight">
+    <Box className="mt-[15vh] md:mt-[30vh]  leading-tight">
       <Text
         className={`font-poppins font-bold small flex flex-wrap text-[25px] md:text-[35px]`}
       >
@@ -64,6 +121,12 @@ const HeroText = () => {
       >
         TypeScript{" "}
       </Text>
+
+   
+      {/* <div className="">
+          <FloatingDock items={links} />
+      </div>
+       */}
     </Box>
   );
 };

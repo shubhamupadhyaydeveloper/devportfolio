@@ -20,6 +20,7 @@ import { ScrollTrigger } from "gsap/all";
 import Stackpage from "./components/stack/Stackpage";
 import Footer from "./components/footer/Footer.tsx";
 import Contact from "./components/Contact/Contact.tsx";
+import { TextHoverEffect } from "./components/ui/text-hover-effect.tsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,11 +54,7 @@ function App() {
         >
           <Stackpage />
         </section>
-        {/* <section  id="about"
-          className="w-full h-[80vh] mx-auto mt-[35vh] md:mt-[30vh]">
-           <Contact />
-        </section> */}
-        {/* <Footer /> */}
+
       </MaxWidthWrapper>
     </>
   );

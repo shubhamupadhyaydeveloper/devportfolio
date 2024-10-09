@@ -4,6 +4,7 @@ import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 import App from "./App.tsx";
 import { mode } from "@chakra-ui/theme-tools";
+import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
 import Loading from "./Loading.tsx";
@@ -11,7 +12,7 @@ import Loading from "./Loading.tsx";
 const styles = {
   global: (props) => ({
     body: {
-      bg: mode("#ffffff", "black")(props),
+      bg: mode("#ffffff", "#000000")(props),
     },
   }),
 };
@@ -25,11 +26,13 @@ const theme = extendTheme({ styles, config });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
+    <BrowserRouter>
     <Suspense fallback={<Loading />}>
       <ChakraProvider theme={theme}>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <App />
       </ChakraProvider>
     </Suspense>
+    </BrowserRouter>
   </React.StrictMode>
 );
