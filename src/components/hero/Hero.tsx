@@ -14,6 +14,7 @@ import {
   IconHome,
   IconNewSection,
   IconTerminal2,
+  IconBrandLinkedin
 } from "@tabler/icons-react";
 const Navbar = Loadable(React.lazy(() => import("./Navbar")));
 const HeroText = Loadable(React.lazy(() => import("./HeroText")));
@@ -29,34 +30,10 @@ const Hero = () => {
       ),
       href: "#",
     },
-
     {
-      title: "Products",
+      title: "Linkedin",
       icon: (
-        <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    {
-      title: "Components",
-      icon: (
-        <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-
-    {
-      title: "Changelog",
-      icon: (
-        <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-
-    {
-      title: "Twitter",
-      icon: (
-        <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "#",
     },
@@ -86,25 +63,27 @@ const Hero = () => {
   });
 
   return (
-    <section
-      className="w-full h-[80vh] flex flex-col md:mb-[30vh] mt-[5vh]"
+    <div
+      className="w-full h-[80vh] flex flex-col md:mb-[5vh] mt-[5vh]"
       id="home"
     >
       <Navbar />
       <div className="flex md:flex-col lg:flex-row flex-col">
-        <HeroText />
+        <div data-scroll-section >
+          <HeroText />
+        </div>
         <div className="mt-[15vh]">
           <Model />
         </div>
       </div>
 
       {/* Ensure FloatingDock is aligned with the content */}
-      <div className="flex w-full justify-start mt-[100px]">
+      <div data-scroll-section className="flex w-full justify-start mt-[100px]">
         <div className="w-full md:w-auto">
           <FloatingDock items={links} />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

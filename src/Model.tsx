@@ -47,7 +47,7 @@ const Model = () => {
   }, []);
 
   return (
-    <div className="md:-mt-[12vh] lg:mt-[9vh] -mt-[12vh] md:ml-[12vw] lg:absolute lg:right-[1vw] xl:right-[15vw] -ml-[5vw] md:w-[55vw] xl:w-[29vw] lg:w-[35vw] 2xl:w-[23vw]  md:h-[70vh] lg:h-[50vh] xl:h-[70vh] w-full h-[50vh] items-center">
+    <div data-scroll-section className="md:-mt-[12vh] lg:mt-[9vh] -mt-[12vh] md:ml-[12vw] lg:absolute lg:right-[1vw] xl:right-[15vw] -ml-[5vw] md:w-[55vw] xl:w-[29vw] lg:w-[35vw] 2xl:w-[23vw]  md:h-[70vh] lg:h-[50vh] xl:h-[70vh] w-full h-[50vh] items-center">
       <Canvas
         frameloop="always"
   
