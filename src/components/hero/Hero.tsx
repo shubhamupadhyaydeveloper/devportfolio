@@ -64,7 +64,7 @@ const Hero = () => {
 
   return (
     <div
-      className="w-full h-[80vh] flex flex-col md:mb-[5vh] mt-[5vh]"
+      className="w-full flex flex-col md:mb-[5vh] mt-[5vh]"
       id="home"
     >
       <Navbar />

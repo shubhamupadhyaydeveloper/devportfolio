@@ -12,7 +12,7 @@ import Loading from "./Loading.tsx";
 const styles = {
   global: (props) => ({
     body: {
-      bg: mode("#ffffff", "#000000")(props),
+      bg: mode("#000000", "#131320")(props),
     },
   }),
 };

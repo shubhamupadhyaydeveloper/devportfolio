@@ -9,10 +9,11 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { useGSAP } from "@gsap/react";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Text } from "lucide-react";
+import { div } from "framer-motion/client";
 
 const Navbar = () => {
-  const navItems = ["Home", "About", "Tech", "Projects","Contact"];
+  const navItems = [{ page: "Home", number: 1 }, { page: "Tech", number: 2 }, { page: "Projects", number: 3 }, { page: "Contact", number: 4 }];
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const activeBgRef = useRef<HTMLDivElement | null>(null);
   const navRefs = useRef<(HTMLLIElement | null)[]>([]);
@@ -21,7 +22,7 @@ const Navbar = () => {
 
   const { contextSafe } = useGSAP({ scope: textRef });
 
-  const chageColor = useColorModeValue('black','white')
+  const chageColor = useColorModeValue('black', 'white')
 
   useEffect(() => {
     moveActiveBackground(activeIndex);
@@ -36,7 +37,7 @@ const Navbar = () => {
 
       if (containerRect) {
         gsap.to(activeBgRef.current, {
-          x: rect.left - containerRect.left, 
+          x: rect.left - containerRect.left,
           width: rect.width,
           duration: 0.3,
           ease: "power1.inOut",
@@ -101,15 +102,19 @@ const Navbar = () => {
           <nav className="navbar rounded-full">
             <ul>
               {navItems.map((item, index) => (
+                
                 <li
                   key={index}
-                  className={`nav-item ${chageColor} ${
-                    index === activeIndex ? "active" : ""
-                  }`}
+                  className={`nav-item ${chageColor} ${index === activeIndex ? "active" : ""
+                    }`}
                   onClick={() => setActiveIndex(index)}
                   ref={(el) => (navRefs.current[index] = el)}
                 >
-                  {item}
+                  <div className="flex flex-row gap-[7px]">
+                      <h3 className="text-[#9899E6]">{item.number}.</h3>
+                    <h3 className="text-white">    {item.page}</h3>
+                  </div>
+              
                 </li>
               ))}
               {/* The green background element */}

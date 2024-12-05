@@ -24,7 +24,7 @@ import {
 import { Canvas, useThree } from "@react-three/fiber";
 
 const HeroText = () => {
-  
+
   const links = [
     {
       title: "Home",
@@ -91,42 +91,36 @@ const HeroText = () => {
     );
   }, []);
 
-  const textcolor = useColorModeValue('black','white')
+  const textcolor = useColorModeValue('white', '#C7CAD6')
 
 
   return (
-    <Box className="mt-[15vh] md:mt-[30vh]  leading-tight">
+    <Box className="mt-[15vh] md:mt-[20vh] flex flex-wrap  leading-tight w-[85vw] md:w-[50vw] lg:w-[35vw] gap-[20px]">
       <Text
-        className={`font-poppins font-bold small flex flex-wrap text-[25px] md:text-[35px]`}
+        className={`welcometext text-[#000000] font-medium small flex flex-wrap text-[16px] md:text-[25px]`}
       >
-        <span className="text-[#7A7A7A]">I'm&nbsp;</span>{" "}
-        <span className={`text-[${textcolor}]`}>Shubham Upadhyay </span>
-        <span className="text-[30px] md:text-[40px] -mt-[0.6vh] md:-mt-[1vh]">
-          ✌️
-        </span>
+        Hi, I'm Shubham Upadhyay✌️
       </Text>
 
-      <Text
-        className={` text-[#7A7A7A] font-poppins small font-bold flex flex-wrap text-[25px] md:text-[35px]`}
-      >
-        Interested in Code, I love building
-      </Text>
-      <Text
-        className={`text-[#7A7A7A]  font-poppins small font-bold text-[25px]  flex flex-wrap md:text-[35px]`}
-      >
-        web and mobile apps working with
-      </Text>
-      <Text
-        className={`text-[#7A7A7A] font-poppins small font-bold text-[25px] md:text-[35px]`}
-      >
-        TypeScript{" "}
-      </Text>
-
-   
-      {/* <div className="">
-          <FloatingDock items={links} />
+      <div className="flex flex-col leading-none">
+        <Text
+          className="text-[#7A7A7A] font-poppins small font-bold text-[45px] md:text-[60px] leading-none"
+        >
+          <span className="font-poppins small font-bold text-[35px] md:text-[60px]">
+            Interested in Code
+          </span>
+        </Text>
+        <Text
+          className="text-[#7A7A7A] font-poppins small font-bold text-[35px] md:text-[60px] leading-none"
+        >
+          love building web and mobile apps.
+        </Text>
       </div>
-       */}
+
+      <Text className="welcometext text-[#000000] font-medium small flex flex-wrap text-[16px] md:text-[19px] mt-[5vh]">
+        I help startups build impactful mobile and web applications.
+        A passionate full-stack developer, crafting innovative products and experiences. Dedicated to empowering startups and fostering meaningful tech communities.
+      </Text>
     </Box>
   );
 };

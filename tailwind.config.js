@@ -52,6 +52,7 @@ module.exports = {
         black: {
           DEFAULT: "#000000",
           100: "#000319",
+          primary_light : '#BDBDEA'
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

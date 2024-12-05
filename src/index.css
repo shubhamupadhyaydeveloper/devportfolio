@@ -185,9 +185,13 @@ ul {
   cursor: pointer;
   position: relative;
   z-index: 1;
-  font-family: "poppins";
+  font-family: "Space Grotesk";
   font-weight: normal;
   /* Make sure items are above the background */
+}
+
+.welcometext {
+    font-family: "Space Grotesk";
 }
 
 .active-bg {
