@@ -97,7 +97,7 @@ const HeroText = () => {
   return (
     <Box className="mt-[15vh] md:mt-[20vh] flex flex-wrap  leading-tight w-[85vw] md:w-[50vw] lg:w-[35vw] gap-[20px]">
       <Text
-        className={`welcometext text-[#000000] font-medium small flex flex-wrap text-[16px] md:text-[25px]`}
+        className={`welcometext text-white font-medium small flex flex-wrap text-[16px] md:text-[25px]`}
       >
         Hi, I'm Shubham Upadhyay✌️
       </Text>
@@ -117,7 +117,7 @@ const HeroText = () => {
         </Text>
       </div>
 
-      <Text className="welcometext text-[#000000] font-medium small flex flex-wrap text-[16px] md:text-[19px] mt-[5vh]">
+      <Text className="welcometext text-white font-medium small flex flex-wrap text-[16px] md:text-[19px] mt-[5vh]">
         I help startups build impactful mobile and web applications.
         A passionate full-stack developer, crafting innovative products and experiences. Dedicated to empowering startups and fostering meaningful tech communities.
       </Text>
