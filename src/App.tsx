@@ -18,7 +18,7 @@ import { ScrollTrigger } from "gsap/all";
 import LocomotiveScroll from "locomotive-scroll";
 import Stackpage from "./components/stack/Stackpage";
 import ProjectItem from "./components/projects/components/ProjectItem";
-import Footer from "./components/footer/Footer";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -96,7 +96,14 @@ function App() {
             </div>
           </section>
         </div>
-       <Footer />
+        <div >
+          <div className="flex flex-row gap-[10px] rounded-md p-[10px] w-fit ">
+            <h3 className="font-poppins text-[18px]">I'm always happy to chat</h3>
+            <button>
+              <h3 className="text-[20px] text-blue-500 underline" style={{ fontFamily: "Space Grotesk" }}> Say hello!</h3>
+            </button>
+          </div>
+        </div>
       </MaxWidthWrapper>
     </>
   );
