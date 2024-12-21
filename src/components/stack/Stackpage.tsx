@@ -36,7 +36,7 @@ const Stackpage = () => {
   return (
     <>
       <div
-        className="font-poppins text-[20px] flex flex-col font-bold bg-black/0 cursor-pointer h-[80px] overflow-hidden"
+        className="font-poppins w-[12vw] text-[20px] flex flex-col font-bold bg-black/0 cursor-pointer h-[80px] overflow-hidden"
         ref={textRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
