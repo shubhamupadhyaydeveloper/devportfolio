@@ -97,30 +97,32 @@ const HeroText = () => {
   return (
     <Box className="mt-[15vh] md:mt-[20vh] flex flex-wrap  leading-tight w-[85vw] md:w-[50vw] lg:w-[35vw] gap-[20px]">
       <Text
-        className={`welcometext text-white font-medium small flex flex-wrap text-[16px] md:text-[25px]`}
+        className={`welcometext text-[#7A7A7A] font-medium small flex flex-wrap text-[16px] md:text-[25px]`}
       >
         Hi, I'm Shubham Upadhyay✌️
       </Text>
 
       <div className="flex flex-col leading-none">
         <Text
-          className="text-[#7A7A7A] font-poppins small font-bold text-[45px] md:text-[60px] leading-none"
+          className="text-[#979797] font-poppins small font-bold text-[45px] md:text-[60px] leading-none"
         >
           <span className="font-poppins small font-bold text-[35px] md:text-[60px]">
             Interested in Code
           </span>
         </Text>
         <Text
-          className="text-[#7A7A7A] font-poppins small font-bold text-[35px] md:text-[60px] leading-none"
+          className="text-[#979797] font-poppins small font-bold text-[35px] md:text-[60px] leading-none"
         >
           love building web and mobile apps.
         </Text>
       </div>
 
-      <Text className="welcometext text-white font-medium small flex flex-wrap text-[16px] md:text-[19px] mt-[5vh]">
+      <Text className="welcometext text-[#7A7A7A] font-medium small flex flex-wrap text-[16px] md:text-[19px] mt-[5vh]">
         I help startups build impactful mobile and web applications.
         A passionate full-stack developer, crafting innovative products and experiences. Dedicated to empowering startups and fostering meaningful tech communities.
       </Text>
+
+      <h1 className="text-red">testinng</h1>
     </Box>
   );
 };
