@@ -25,41 +25,41 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const containerRef = useRef<any>(null);
 
-  useEffect(() => {
-    const locoScroll = new LocomotiveScroll({
-      el: containerRef.current,
-      smooth: true,
-    });
+  // useEffect(() => {
+  //   const locoScroll = new LocomotiveScroll({
+  //     el: containerRef.current,
+  //     smooth: true,
+  //   });
 
-    // Update ScrollTrigger with Locomotive Scroll
-    locoScroll.on("scroll", ScrollTrigger.update);
+  //   // Update ScrollTrigger with Locomotive Scroll
+  //   locoScroll.on("scroll", ScrollTrigger.update);
 
-    ScrollTrigger.scrollerProxy(containerRef.current, {
-      scrollTop(value) {
-        return arguments.length
-          ? locoScroll.scrollTo(value, 0, 0)
-          : locoScroll.scroll.instance.scroll.y;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-      pinType: containerRef?.current?.style?.transform ? "transform" : "fixed",
-    });
+  //   ScrollTrigger.scrollerProxy(containerRef.current, {
+  //     scrollTop(value) {
+  //       return arguments.length
+  //         ? locoScroll.scrollTo(value, 0, 0)
+  //         : locoScroll.scroll.instance.scroll.y;
+  //     },
+  //     getBoundingClientRect() {
+  //       return {
+  //         top: 0,
+  //         left: 0,
+  //         width: window.innerWidth,
+  //         height: window.innerHeight,
+  //       };
+  //     },
+  //     pinType: containerRef?.current?.style?.transform ? "transform" : "fixed",
+  //   });
 
-    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-    ScrollTrigger.refresh();
+  //   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+  //   ScrollTrigger.refresh();
 
-    return () => {
-      locoScroll.destroy();
-      ScrollTrigger.removeEventListener("refresh", locoScroll.update);
-    };
-  }
-    , [])
+  //   return () => {
+  //     locoScroll.destroy();
+  //     ScrollTrigger.removeEventListener("refresh", locoScroll.update);
+  //   };
+  // }
+  //   , [])
 
   useEffect(() => {
     gsap.to(".box", {
@@ -77,7 +77,7 @@ function App() {
   return (
     <>
       <MaxWidthWrapper classname="">
-        <div ref={containerRef} data-scroll-container>
+        <div >
           <section className="w-full h-[100vh]">
             <Hero />
           </section>
