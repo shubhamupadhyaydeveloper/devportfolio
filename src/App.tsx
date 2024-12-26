@@ -64,7 +64,6 @@ function App() {
         </div>
 
         <Section
-          id="stack"
           className="w-full h-[10vh] mx-auto mt-[35vh] md:mt-[0vh] "
         >
           <div >
