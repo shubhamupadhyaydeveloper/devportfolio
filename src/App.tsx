@@ -64,7 +64,7 @@ function App() {
         </div>
 
         <Section
-          className="w-full h-[10vh] mx-auto mt-[35vh] md:mt-[0vh] "
+          className="w-full h-[30vh] mx-auto mt-[35vh] md:mt-[0vh] "
         >
           <div >
             <div className="flex flex-row gap-[10px] rounded-md p-[10px] w-fit ">
