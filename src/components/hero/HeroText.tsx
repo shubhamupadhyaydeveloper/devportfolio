@@ -121,8 +121,6 @@ const HeroText = () => {
         I help startups build impactful mobile and web applications.
         A passionate full-stack developer, crafting innovative products and experiences. Dedicated to empowering startups and fostering meaningful tech communities.
       </Text>
-
-      <h1 className="text-red">testinng</h1>
     </Box>
   );
 };

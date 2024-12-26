@@ -1,33 +1,27 @@
 name: Deploy to render
 on:
-    push : 
-         branches: [main]
-    pull_request: 
-         branches: [main]
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        permissions: 
-            contents: read
-            packages: write
-        steps:
-            - name: Checkout name
-              uses: actions/checkout@v3
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout name
+        uses: actions/checkout@v3
 
-            - name: setup node and version
-              uses: actions/setup-node@v3
-              with:
-                node-version : 20
-            
-            - name: install Dependencies
-              run : npm install
+      - name: setup node and version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
 
-            - name: build project
-              run : npm run build
-            
-            - name: deploy to render service
-              run: |
-                curl -X POST \
-                -H "Authorization: Bearer " \
-                -H "Content-Type: application/json" \
-                 https://api.render.com/v1/services/<your-service-id>/deploys
+      - name: install Dependencies
+        run: npm install
+
+      - name: build project
+        run: npm run build
+
+      - name: Deploy to Render Service
+        run: |
+          curl -X POST "https://api.render.com/deploy/srv-cqetbm88fa8c73eeeao0?key=P7Bo-4YpiVU"
