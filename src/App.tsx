@@ -18,48 +18,12 @@ import { ScrollTrigger } from "gsap/all";
 import LocomotiveScroll from "locomotive-scroll";
 import Stackpage from "./components/stack/Stackpage";
 import ProjectItem from "./components/projects/components/ProjectItem";
+import { Section } from "lucide-react";
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const containerRef = useRef<any>(null);
-
-  // useEffect(() => {
-  //   const locoScroll = new LocomotiveScroll({
-  //     el: containerRef.current,
-  //     smooth: true,
-  //   });
-
-  //   // Update ScrollTrigger with Locomotive Scroll
-  //   locoScroll.on("scroll", ScrollTrigger.update);
-
-  //   ScrollTrigger.scrollerProxy(containerRef.current, {
-  //     scrollTop(value) {
-  //       return arguments.length
-  //         ? locoScroll.scrollTo(value, 0, 0)
-  //         : locoScroll.scroll.instance.scroll.y;
-  //     },
-  //     getBoundingClientRect() {
-  //       return {
-  //         top: 0,
-  //         left: 0,
-  //         width: window.innerWidth,
-  //         height: window.innerHeight,
-  //       };
-  //     },
-  //     pinType: containerRef?.current?.style?.transform ? "transform" : "fixed",
-  //   });
-
-  //   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-  //   ScrollTrigger.refresh();
-
-  //   return () => {
-  //     locoScroll.destroy();
-  //     ScrollTrigger.removeEventListener("refresh", locoScroll.update);
-  //   };
-  // }
-  //   , [])
 
   useEffect(() => {
     gsap.to(".box", {
@@ -94,16 +58,24 @@ function App() {
               <ProjectItem />
               <ProjectItem />
             </div>
+
+            <div className="h-[5vh]"/>
           </section>
         </div>
-        <div >
-          <div className="flex flex-row gap-[10px] rounded-md p-[10px] w-fit ">
-            <h3 className="font-poppins text-white text-[18px]">I'm always happy to chat</h3>
-            <button>
-              <h3 className="text-[20px] text-blue-500 underline" style={{ fontFamily: "Space Grotesk" }}> Say hello!</h3>
-            </button>
+
+        <Section
+          id="stack"
+          className="w-full h-[10vh] mx-auto mt-[35vh] md:mt-[0vh] "
+        >
+          <div >
+            <div className="flex flex-row gap-[10px] rounded-md p-[10px] w-fit ">
+              <h3 className="font-poppins text-white text-[18px]">I'm always happy to chat</h3>
+              <button>
+                <h3 className="text-[20px] text-blue-500 underline" style={{ fontFamily: "Space Grotesk" }}> Say hello!</h3>
+              </button>
+            </div>
           </div>
-        </div>
+        </Section>
       </MaxWidthWrapper>
     </>
   );
