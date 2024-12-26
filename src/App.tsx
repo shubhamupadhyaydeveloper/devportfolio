@@ -55,26 +55,10 @@ function App() {
             <div className="flex flex-col gap-[50px] mt-[5vh]">
               <ProjectItem />
               <ProjectItem />
-              <ProjectItem />
-              <ProjectItem />
-            </div>
 
-            <div className="h-[5vh]"/>
+            </div>
           </section>
         </div>
-
-        <Section
-          className="w-full h-[30vh] mx-auto mt-[35vh] md:mt-[0vh] "
-        >
-          <div >
-            <div className="flex flex-row gap-[10px] rounded-md p-[10px] w-fit ">
-              <h3 className="font-poppins text-white text-[18px]">I'm always happy to chat</h3>
-              <button>
-                <h3 className="text-[20px] text-blue-500 underline" style={{ fontFamily: "Space Grotesk" }}> Say hello!</h3>
-              </button>
-            </div>
-          </div>
-        </Section>
       </MaxWidthWrapper>
     </>
   );
