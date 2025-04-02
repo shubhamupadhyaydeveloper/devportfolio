@@ -19,6 +19,7 @@ import LocomotiveScroll from "locomotive-scroll";
 import Stackpage from "./components/stack/Stackpage";
 import ProjectItem from "./components/projects/components/ProjectItem";
 import { Section } from "lucide-react";
+import Contact from "./components/Contact/Contact";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -55,8 +56,11 @@ function App() {
             <div className="flex flex-col gap-[50px] mt-[5vh]">
               <ProjectItem />
               <ProjectItem />
-
             </div>
+          </section>
+
+          <section className="mt-[20vh] pb-[10vh]">
+             <Contact />
           </section>
         </div>
       </MaxWidthWrapper>
