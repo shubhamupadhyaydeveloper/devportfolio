@@ -5,15 +5,6 @@ import MaxWidthWrapper from "../global/MaxWithContainer";
 import { Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import { FloatingDock } from "../ui/floating-dock";
 import {
-  Text as ReactText,
-  Float,
-  Text3D,
-  Clouds,
-  Cloud,
-  OrbitControls,
-  Center,
-} from "@react-three/drei";
-import {
   IconBrandGithub,
   IconBrandX,
   IconExchange,
@@ -22,6 +13,10 @@ import {
   IconTerminal2,
 } from "@tabler/icons-react";
 import { Canvas, useThree } from "@react-three/fiber";
+import { div } from "framer-motion/client";
+import SplitText from "../animatedComponents/SplitText";
+import BlurText from "../animatedComponents/BlutText";
+import DecryptedText from "../animatedComponents/DecryptedText";
 
 const HeroText = () => {
 
@@ -72,56 +67,152 @@ const HeroText = () => {
       href: "#",
     },
   ];
-  useGSAP(() => {
-    gsap.timeline().fromTo(
-      ".small",
-      {
-        y: 40,
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.5,
-        ease: "power2.inOut",
-        stagger: {
-          each: 0.13,
-        },
-      }
-    );
-  }, []);
 
   const textcolor = useColorModeValue('white', '#C7CAD6')
-
+  const handleAnimationComplete = () => {
+    console.log('All letters have animated!');
+  };
 
   return (
-    <Box className="mt-[15vh] md:mt-[20vh] flex flex-wrap  leading-tight w-[85vw] md:w-[50vw] lg:w-[35vw] gap-[20px]">
-      <Text
-        className={`welcometext text-[#7A7A7A] font-medium small flex flex-wrap text-[16px] md:text-[25px]`}
-      >
-        Hi, I'm Shubham Upadhyay✌️
-      </Text>
+    <div className="mt-[15vh] md:mt-[20vh] flex flex-wrap  leading-tight w-[85vw] md:w-[50vw] lg:w-[45vw] ">
+      <SplitText
+        text="Hi, my name is"
+        className="text-2xl font-semibold text-center text-[#64FFDA] welcometext"
+        delay={50}
+        animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+        animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+        easing={(t) => t * (2 - t)} // Example easing function
+        threshold={0.2}
+        rootMargin="-50px"
+        onLetterAnimationComplete={handleAnimationComplete}
+      />
 
-      <div className="flex flex-col leading-none">
-        <Text
-          className="text-[#979797] font-poppins small font-bold text-[45px] md:text-[60px] leading-none"
-        >
-          <span className="font-poppins small font-bold text-[35px] md:text-[60px]">
-            Interested in Code
-          </span>
-        </Text>
-        <Text
-          className="text-[#979797] font-poppins small font-bold text-[35px] md:text-[60px] leading-none"
-        >
-          love building web and mobile apps.
-        </Text>
+      <div className="gap-[-10px]">
+        <SplitText
+          text="Shubham Upadhyay"
+          className="mb-2 text-[#CCD6F6] font-poppins small font-bold text-[35px] md:text-[60px]"
+          delay={50}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+          easing={(t) => t * (2 - t)} // Example easing function
+          threshold={0.2}
+          rootMargin="-50px"
+          onLetterAnimationComplete={handleAnimationComplete}
+        />
+
+        <BlurText
+          text=""
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className="text-[#8892B0] font-poppins small font-bold text-[35px] md:text-[40px]"
+        />
+
+        <SplitText
+          text="I build things for the web And Mobile"
+          className="mb-10 text-[#8892B0] font-poppins small font-bold text-[35px] md:text-[40px]"
+          delay={10}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+          easing={(t) => t * (2 - t)} // Example easing function
+          threshold={0.2}
+          rootMargin="-50px"
+          onLetterAnimationComplete={handleAnimationComplete}
+        />
+
       </div>
 
-      <Text className="welcometext text-[#7A7A7A] font-medium small flex flex-wrap text-[16px] md:text-[19px] mt-[5vh]">
-        I help startups build impactful mobile and web applications.
-        A passionate full-stack developer, crafting innovative products and experiences. Dedicated to empowering startups and fostering meaningful tech communities.
-      </Text>
-    </Box>
+      <div className="flex flex-row flex-wrap mt-[2vh]">
+        <SplitText
+          text="Love"
+          className="text-[#64FFDA] text-2xl font-semibold"
+          delay={50}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+          easing={(t) => t * (2 - t)} // Example easing function
+          threshold={0.2}
+          rootMargin="-50px"
+          onLetterAnimationComplete={handleAnimationComplete}
+        />
+
+        <SplitText
+          text="build impactful mobile and web applications "
+          className=" text-[#6C7794] text-2xl font-semibold"
+          delay={10}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+          easing={(t) => t * (2 - t)} // Example easing function
+          threshold={0.2}
+          rootMargin="-50px"
+          onLetterAnimationComplete={handleAnimationComplete}
+        />
+
+        <SplitText
+          text="passionate full-stack"
+          className=" text-[#6C7794] text-2xl font-semibold"
+          delay={10}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+          easing={(t) => t * (2 - t)} // Example easing function
+          threshold={0.2}
+          rootMargin="-50px"
+          onLetterAnimationComplete={handleAnimationComplete}
+        />
+
+        <SplitText
+          text=" developer"
+          className=" mb text-[#64FFDA] text-2xl font-semibold"
+          delay={50}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+          easing={(t) => t * (2 - t)} // Example easing function
+          threshold={0.2}
+          rootMargin="-50px"
+          onLetterAnimationComplete={handleAnimationComplete}
+        />
+
+        <SplitText
+          text="crafting innovative products and experiences Dedicated"
+          className=" text-[#6C7794] text-2xl font-semibold"
+          delay={10}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+          easing={(t) => t * (2 - t)} // Example easing function
+          threshold={0.2}
+          rootMargin="-50px"
+          onLetterAnimationComplete={handleAnimationComplete}
+        />
+
+        <SplitText
+          text="to empowering startups and fostering"
+          className=" text-[#6C7794] text-2xl font-semibold"
+          delay={10}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+          easing={(t) => t * (2 - t)} // Example easing function
+          threshold={0.2}
+          rootMargin="-50px"
+          onLetterAnimationComplete={handleAnimationComplete}
+        />
+
+        <SplitText
+          text=" meaningful"
+          className=" mb text-[#64FFDA] text-2xl font-semibold"
+          delay={50}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+          easing={(t) => t * (2 - t)} // Example easing function
+          threshold={0.2}
+          rootMargin="-50px"
+          onLetterAnimationComplete={handleAnimationComplete}
+        />
+
+
+      </div>
+
+
+    </div>
+
   );
 };
 
