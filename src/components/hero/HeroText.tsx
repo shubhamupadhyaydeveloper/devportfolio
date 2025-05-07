@@ -160,7 +160,7 @@ const HeroText = () => {
         />
 
         <SplitText
-          text=" developer"
+          text="developer"
           className=" mb text-[#64FFDA] text-2xl font-semibold"
           delay={50}
           animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
@@ -196,7 +196,7 @@ const HeroText = () => {
         />
 
         <SplitText
-          text=" meaningful"
+          text="meaningful"
           className=" mb text-[#64FFDA] text-2xl font-semibold"
           delay={50}
           animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}

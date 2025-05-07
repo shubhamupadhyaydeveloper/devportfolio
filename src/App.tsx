@@ -28,6 +28,12 @@ import ShinyText from "./components/animatedComponents/ShinyText";
 import ColourfulText from "./components/ui/colourful-text";
 import FlowingMenu from "./components/animatedComponents/FlowingMenut";
 import { motion, AnimatePresence } from 'framer-motion';
+import GlitchText from "./components/animatedComponents/GlitchText";
+import PixelTransition from "./components/animatedComponents/PixelTransition";
+import { TextGenerateEffect } from "./components/ui/text-generate-effect";
+import { HeroHighlight } from "./components/ui/hero-highlight";
+import SplitText from "./components/animatedComponents/SplitText";
+
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -35,6 +41,7 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const [count, setCount] = useState(0);
   const [showMain, setShowMain] = useState(false);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     if (count < 100) {
@@ -111,57 +118,135 @@ function MainContent() {
 
 
         <MaxWidthWrapper classname="">
-          <section className="w-full h-[80vh]">
-            <div className="mt-[25vh] mb-[10vh]">
-              <ColourfulText text="About Myself" />
+          <section className="w-full h-[100vh]">
+            <div className="mt-[25vh] mb-[5vh] flex-row flex-wrap">
+              <SplitText
+                text="About"
+                className=" mb text-[#64FFDA] font-poppins small font-bold text-[35px] md:text-[60px]"
+                delay={50}
+                animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                easing={(t) => t * (2 - t)} // Example easing function
+                threshold={0.2}
+                rootMargin="-50px"
+              // onLetterAnimationComplete={handleAnimationComplete}
+              />
+
+              <SplitText
+                text="Myself"
+                className="mb-10 text-[#8892B0] font-poppins small font-bold text-[35px] md:text-[60px]"
+                delay={10}
+                animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                easing={(t) => t * (2 - t)} // Example easing function
+                threshold={0.2}
+                rootMargin="-50px"
+              // onLetterAnimationComplete={handleAnimationComplete}
+              />
+
+              {/* <ColourfulText text="About Myself" /> */}
             </div>
 
-            <div className="flex flex-row flex-wrap">
-              <ScrollReveal
-                baseOpacity={0.2}
-                enableBlur={true}
-                baseRotation={10}
-                blurStrength={10}
-                // wordAnimationEnd="bottom bottom"
-                textClassName="text-[#6C7794] leading-tight text-[30px] font-semibold "
+            <div className="flex flex-row gap-[10px] flex-wrap w-full ">
 
-              >
-                Hi, I’m Shubham Upadhyay, a full-stack developer from Noida, India, currently pursuing my Bachelor of Science at IIT Patna (2024–2028) My coding journey began in class 11, diving into backend development, and by class 12, I was building full-stack apps using the MERN stack.
- 
-                Over time, I’ve grown confident with technologies like React.js, React Native, Next.js, TypeScript, Zustand, Redux Toolkit, Docker, MongoDB, Express, and more. I’ve built several real-world projects, I'm currently working at Flokk as a React Native Developer, where I'm building production-ready mobile apps and collaborating with cross-functional teams. I’ve also interned at Heliverse as a Full Stack Developer, gaining deep insight into building for scale and user experience.
-                Beyond code, I enjoy reading books 📚, watching anime 🎌, and exploring new tech that can bring ideas to life.
-         </ScrollReveal>
-        
+              <div className="flex justify-center items-center w-full mt-[5vh]">
+                <PixelTransition
+                  firstContent={
+                    <img
+                      src="/profile.jpg"
+                      alt="default pixel transition content, a cat!"
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  }
+                  secondContent={
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        display: "grid",
+                        placeItems: "center",
+                        backgroundColor: "#111"
+                      }}
+                    >
+                      <p style={{ fontWeight: 900, fontSize: "3rem", color: "#ffffff" }}>Hello 👋🏻</p>
+                    </div>
+                  }
+                  gridSize={12}
+                  pixelColor="#ffffff"
+                  animationStepDuration={0.4}
+                  className="custom-pixel-card"
+                />
+              </div>
 
+
+              <div className="flex flex-row flex-wrap mt-[5vh]">
+                <ScrollReveal
+                  baseOpacity={0.2}
+                  enableBlur={true}
+                  baseRotation={3}
+                  blurStrength={10}
+                  // wordAnimationEnd="bottom bottom"
+                  textClassName="text-[#6C7794]  text-[25px] font-semibold "
+
+                >
+                  Hi, I’m Shubham Upadhyay, a full-stack developer from New Delhi, India, currently pursuing my Bachelor of Science at IIT Patna (2024–2028) My coding journey began in class 11, diving into backend development, and by class 12, I was building full-stack apps using the MERN stack.
+
+                  Over time, I’ve grown confident with technologies like React.js, React Native, Next.js, TypeScript, Zustand, Redux Toolkit, Docker, MongoDB, Express, and more. I’ve built several real-world projects, I'm currently working at Flokk as a React Native Developer, where I'm building production-ready mobile apps and collaborating with cross-functional teams. I’ve also interned at Heliverse as a Full Stack Developer, gaining deep insight into building for scale and user experience.
+                  Beyond code, I enjoy reading books 📚, watching anime 🎌, and exploring new tech that can bring ideas to life.
+                </ScrollReveal>
+
+
+              </div>
+
+            </div>
+          </section>
+
+
+          <div className="mt-[20vh] flex-row flex-wrap">
+          <SplitText
+                text="My"
+                className=" mb text-[#64FFDA] font-poppins small font-bold text-[35px] md:text-[60px]"
+                delay={50}
+                animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                easing={(t) => t * (2 - t)} // Example easing function
+                threshold={0.2}
+                rootMargin="-50px"
+              // onLetterAnimationComplete={handleAnimationComplete}
+              />
+
+              <SplitText
+                text="Projects"
+                className="mb-10 text-[#8892B0] font-poppins small font-bold text-[35px] md:text-[60px]"
+                delay={10}
+                animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                easing={(t) => t * (2 - t)} // Example easing function
+                threshold={0.2}
+                rootMargin="-50px"
+              // onLetterAnimationComplete={handleAnimationComplete}
+              />
           </div>
-        </section>
+        <div style={{ height: '60vh' }} className="mt-[15vh]">
+          <FlowingMenu items={demoItems} />
+        </div>
+        </MaxWidthWrapper>
 
-        <section className="w-full h-[100vh]">
-          <div className="mt-[20vh]">
-            <ColourfulText text="My Projects" />
-          </div>
-
-          <div style={{ height: '600px', position: 'relative' }}>
-            <FlowingMenu items={demoItems} />
-          </div>
-        </section>
-      </MaxWidthWrapper>
-
-      <div style={{ position: 'relative', }}>
-        <TextPressure
-          text="DEVELOPER"
-          flex={true}
-          alpha={false}
-          stroke={false}
-          width={true}
-          weight={true}
-          italic={true}
-          textColor="#ffffff"
-          strokeColor="#ff0000"
-          minFontSize={36}
-        />
-      </div>
-    </div >
+        <div style={{ position: 'relative', }}>
+          <TextPressure
+            text="DEVELOPER"
+            flex={true}
+            alpha={false}
+            stroke={false}
+            width={true}
+            weight={true}
+            italic={true}
+            textColor="#ffffff"
+            strokeColor="#ff0000"
+            minFontSize={36}
+          />
+        </div>
+      </div >
     </>
   );
 }
