@@ -27,12 +27,9 @@ const theme = extendTheme({ styles, config });
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
-    <Suspense fallback={<Loading />}>
-      <ChakraProvider theme={theme}>
-        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      <Suspense fallback={<Loading />}>
         <App />
-      </ChakraProvider>
-    </Suspense>
+      </Suspense>
     </BrowserRouter>
   </React.StrictMode>
 );
