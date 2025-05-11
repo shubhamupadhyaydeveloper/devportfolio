@@ -16,6 +16,7 @@ import {
   IconTerminal2,
   IconBrandLinkedin
 } from "@tabler/icons-react";
+import ScrollReveal from "../ScrollReveal";
 const Navbar = Loadable(React.lazy(() => import("./Navbar")));
 const HeroText = Loadable(React.lazy(() => import("./HeroText")));
 
@@ -48,25 +49,30 @@ const Hero = () => {
 
   return (
     <div
-      className="w-full flex flex-col md:mb-[5vh]"
+      className="w-full container flex flex-col py-20 overflow-x-hidden"
       id="home"
     >
-      
+
       <div className="flex md:flex-col lg:flex-row flex-col">
         <div data-scroll-section >
           <HeroText />
+          <div data-scroll-section className="flex w-full justify-start mt-[80px]">
+            <div className="w-full md:w-auto">
+              <ScrollReveal>
+                <FloatingDock items={links} />
+              </ScrollReveal>
+            </div>
+          </div>
         </div>
-        <div className="mt-[10vh] ml-[5vw]">
-          <Model />
+
+        <div className="lg:w-1/3 flex justify-center items-center md:mt-[15vh]">
+          <ScrollReveal>
+            <Model />
+          </ScrollReveal>
         </div>
+
       </div>
 
-      
-      <div data-scroll-section className="flex w-full justify-start mt-[100px]">
-        <div className="w-full md:w-auto">
-          <FloatingDock items={links} />
-        </div>
-      </div>
     </div>
   );
 };

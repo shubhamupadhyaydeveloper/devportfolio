@@ -70,7 +70,7 @@ const HeroText = () => {
   };
 
   return (
-    <div className="mt-[15vh] md:mt-[20vh] flex flex-wrap leading-tight w-[90vw] sm:w-[85vw] md:w-[60vw] lg:w-[50vw] xl:w-[45vw] mx-auto">
+    <div className="mt-[10vh] md:mt-[15vh] items-center flex flex-wrap leading-tight w-[90vw] sm:w-[85vw] md:w-[60vw] lg:w-[50vw] xl:w-[45vw] mx-auto">
       <SplitText
         text="Hi, my name is"
         className="text-xl sm:text-2xl font-semibold text-center text-[#64FFDA] welcometext"

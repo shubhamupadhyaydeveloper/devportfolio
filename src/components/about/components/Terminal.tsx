@@ -75,7 +75,7 @@ const Terminal = () => {
       </div>
       <div 
         ref={terminalRef}
-        className="terminal-content font-poppins text-[30px] md:text-[20px] text-[#64FFDA]  mt-2 h-[80vh] overflow-hidden"
+        className="terminal-content font-poppins text-[30px] md:text-[20px] text-[#64FFDA]  mt-2 h-[55vh] overflow-hidden"
       >
         {terminalText}
         <span className={`cursor ${cursorVisible ? 'opacity-100' : 'opacity-0'}`}></span>

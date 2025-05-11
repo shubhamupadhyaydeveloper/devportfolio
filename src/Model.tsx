@@ -2,6 +2,7 @@ import React, { useEffect, useState, Suspense, useRef } from "react";
 import { Canvas, ThreeEvent, useFrame } from "@react-three/fiber";
 import { useGLTF, OrbitControls, Html } from "@react-three/drei";
 import CanvasLoader from "./ModelLoader";
+import ScrollReveal from "./components/ScrollReveal";
 
 useGLTF.preload("./dog.glb");
 
@@ -19,12 +20,12 @@ function ReactModel({ isMobile }) {
         <hemisphereLight intensity={2} shadow={"#ffffff"} castShadow={false} />
         <primitive
           object={model.scene}
-          scale={isMobile ? 0.9 : 0.9}
+          scale={isMobile ? 0.9 : 0.45}
           rotation={[-0, 1.1, -0.01]}
-          
         />
       </mesh>
       <Html wrapperClass="dog">Hi, I am dog 👍</Html>
+
     </>
   );
 }
@@ -47,13 +48,16 @@ const Model = () => {
   }, []);
 
   return (
-    <div data-scroll-section className="md:-mt-[12vh] lg:mt-[9vh] -mt-[12vh] md:ml-[12vw] lg:absolute lg:right-[1vw] xl:right-[15vw] -ml-[5vw] md:w-[55vw] xl:w-[29vw] lg:w-[35vw] 2xl:w-[23vw]  md:h-[70vh] lg:h-[50vh] xl:h-[70vh] w-full h-[50vh] items-center">
+    <div
+      data-scroll-section
+      className="px-4 md:px-12 lg:px-20 h-[50vh] w-[40vw] "
+    >
       <Canvas
         frameloop="always"
-  
         dpr={[1, 2]}
-        camera={{ position: [20, 3, 5], fov: 30, near: 1, far: 40 }}
-        gl={{ preserveDrawingBuffer: true, antialias: false }}
+        camera={{ position: [4, 2, 5], fov: 35 }}
+        gl={{ preserveDrawingBuffer: true, antialias: true }}
+        className="h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] w-full"
       >
         <Suspense fallback={<CanvasLoader />}>
           <OrbitControls enableZoom={true} />
@@ -61,6 +65,7 @@ const Model = () => {
         </Suspense>
       </Canvas>
     </div>
+
   );
 };
 

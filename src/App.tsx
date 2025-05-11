@@ -36,6 +36,8 @@ import SplitText from "./components/animatedComponents/SplitText";
 import AboutPage from "./components/about";
 import ButtonPrimary from "./components/ButtonPrimary";
 import Logo from "./components/Logo";
+import Skills from "./components/skills/Skill";
+import Navigation from "./components/navigation/Header";
 
 
 
@@ -105,32 +107,31 @@ function MainContent() {
   return (
     <>
 
-      <div className="overflow-hidden" style={{ 'backgroundColor': '#0A192F' }} >
-      <header className="mx-auto w-full max-w-screen-xl px-4 py-6 flex justify-between items-center animate-fade-in">
-        <Logo />
-        <ButtonPrimary>GET IN TOUCH</ButtonPrimary>
-      </header>
-        <MaxWidthWrapper classname="">
-          <section className="w-full h-[100vh]">
-            <Hero />
-          </section>
-        </MaxWidthWrapper>
+      <div className="overflow-hidden overflow-x-hidden" style={{ 'backgroundColor': '#0A192F' }} >
+        <div>
+          <Navigation />
 
-        <div className="-rotate-2">
+          <MaxWidthWrapper classname="">
+            <section className="w-full h-[100vh]" id="home">
+              <Hero />
+            </section>
+          </MaxWidthWrapper>
+        </div>
+
+        <div className="-rotate-2 ">
           <ScrollVelocity
             texts={['React Native', 'Typescript']}
             className="custom-scroll-text text-[#CCD6F6]"
           />
         </div>
 
-        <MaxWidthWrapper classname="h-[80vh]">
-            <AboutPage />
+        <MaxWidthWrapper classname="">
+          <AboutPage />
         </MaxWidthWrapper>
 
 
-        <MaxWidthWrapper classname="h-[100vh] w-full">
-          <div className="mt-[20vh] flex-row flex-wrap">
-
+        <MaxWidthWrapper classname="">
+          <div className="container py-20 flex-row flex-wrap" id="projects">
             <SplitText
               text="Projects"
               className="mb-10 text-[#8892B0] font-poppins small font-bold text-[35px] md:text-[60px]"
@@ -143,12 +144,17 @@ function MainContent() {
             // onLetterAnimationComplete={handleAnimationComplete}
             />
           </div>
-          <div style={{ height: '60vh' }} className="mt-[15vh]">
+          <div style={{ height: '60vh' }} className="">
             <FlowingMenu items={demoItems} />
           </div>
         </MaxWidthWrapper>
 
-        <div style={{ position: 'relative', }}>
+        <Skills />
+
+        <Contact />
+
+
+        {/* <div style={{ position: 'relative', }}>
           <TextPressure
             text="DEVELOPER"
             flex={true}
@@ -161,7 +167,7 @@ function MainContent() {
             strokeColor="#ff0000"
             minFontSize={36}
           />
-        </div>
+        </div> */}
       </div >
     </>
   );
