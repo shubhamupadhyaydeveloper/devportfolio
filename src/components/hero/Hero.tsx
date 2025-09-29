@@ -1,24 +1,18 @@
 import React from "react";
+import { useColorModeValue } from "@chakra-ui/react";
+import Loadable from "../global/Loadable";
+import ScrollReveal from "../ScrollReveal";
 import { FloatingDock } from "../ui/floating-dock";
 
-import Model from "../../Model";
-import Loadable from "../global/Loadable";
-import MaxWidthWrapper from "../global/MaxWithContainer";
-import { useColorModeValue } from "@chakra-ui/react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import {
   IconBrandGithub,
-  IconBrandX,
-  IconExchange,
+  IconBrandLinkedin,
   IconHome,
-  IconNewSection,
-  IconTerminal2,
-  IconBrandLinkedin
 } from "@tabler/icons-react";
-import ScrollReveal from "../ScrollReveal";
+
 const Navbar = Loadable(React.lazy(() => import("./Navbar")));
 const HeroText = Loadable(React.lazy(() => import("./HeroText")));
+const Model = Loadable(React.lazy(() => import("../../Model")));
 
 const Hero = () => {
   const colorValue = useColorModeValue("black", "white");
@@ -29,10 +23,10 @@ const Hero = () => {
       icon: (
         <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#home",
     },
     {
-      title: "Linkedin",
+      title: "LinkedIn",
       icon: (
         <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
@@ -48,32 +42,51 @@ const Hero = () => {
   ];
 
   return (
-    <div
-      className="w-full container flex flex-col py-20 overflow-x-hidden"
+    <section
       id="home"
+      className="
+        w-full flex flex-col 
+        items-center justify-center 
+        py-12 md:py-16 lg:py-20 
+        overflow-x-hidden 
+        px-4 sm:px-8 lg:px-16
+      "
     >
+      {/* Responsive Layout */}
+      <div
+        className="
+          flex flex-col-reverse lg:flex-row 
+          items-center justify-between
+           lg:gap-20 
+          w-full max-w-7xl mx-auto
+        "
+      >
+        {/* Text + Dock */}
+        <div className="flex flex-col w-full lg:w-2/3">
+          <ScrollReveal>
+            <HeroText />
+          </ScrollReveal>
 
-      <div className="flex md:flex-col lg:flex-row flex-col">
-        <div data-scroll-section >
-          <HeroText />
-          <div data-scroll-section className="flex w-full justify-start mt-[80px]">
-            <div className="w-full md:w-auto">
-              <ScrollReveal>
-                <FloatingDock items={links} />
-              </ScrollReveal>
+          <ScrollReveal>
+            <div
+              className="
+               w-[12vw] mt-[5vh]
+               flex justify-center
+              "
+            >
+              <FloatingDock items={links} />
             </div>
-          </div>
+          </ScrollReveal>
         </div>
 
-        <div className="lg:w-1/3 flex justify-center items-center md:mt-[15vh]">
+        {/* 3D Model */}
+        <div className="w-full lg:w-1/3 flex justify-center items-center">
           <ScrollReveal>
             <Model />
           </ScrollReveal>
         </div>
-
       </div>
-
-    </div>
+    </section>
   );
 };
 

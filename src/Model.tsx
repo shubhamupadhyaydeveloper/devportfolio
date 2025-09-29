@@ -20,8 +20,9 @@ function ReactModel({ isMobile }) {
         <hemisphereLight intensity={2} shadow={"#ffffff"} castShadow={false} />
         <primitive
           object={model.scene}
-          scale={isMobile ? 0.9 : 0.45}
-          rotation={[-0, 1.1, -0.01]}
+          scale={isMobile ? .5 : 0.45}
+          position={[0, -0.4, 0]}       // ⬅️ Optional, keeps model centered
+          rotation={[0, 1.1, 0]}
         />
       </mesh>
       <Html wrapperClass="dog">Hi, I am dog 👍</Html>
@@ -50,7 +51,13 @@ const Model = () => {
   return (
     <div
       data-scroll-section
-      className="px-4 md:px-12 lg:px-20 h-[50vh] w-[40vw] "
+      className="
+        mt-[15vh]
+        md:mt-[10vh]
+        w-full 
+        h-[250px] sm:h-[350px] 
+        md:w-[50vw]
+      "
     >
       <Canvas
         frameloop="always"

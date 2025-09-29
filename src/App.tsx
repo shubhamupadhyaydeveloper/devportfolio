@@ -112,20 +112,20 @@ function MainContent() {
           <Navigation />
 
           <MaxWidthWrapper classname="">
-            <section className="w-full h-[100vh]" id="home">
+            <section className="w-full h-[100vh] md:mt-[10vh]" id="home">
               <Hero />
             </section>
           </MaxWidthWrapper>
         </div>
 
-        <div className="-rotate-2 ">
+        {/* <div className="rotate-2 ">
           <ScrollVelocity
             texts={['React Native', 'Typescript']}
-            className="custom-scroll-text text-[#CCD6F6]"
+            className=" text-[#CCD6F6]"
           />
-        </div>
+        </div> */}
 
-        <MaxWidthWrapper classname="">
+        <MaxWidthWrapper classname="mt-[30vh] md:mt-[1vh]">
           <AboutPage />
         </MaxWidthWrapper>
 

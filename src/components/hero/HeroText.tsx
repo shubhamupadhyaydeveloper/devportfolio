@@ -117,91 +117,88 @@ const HeroText = () => {
         />
       </div>
 
-      <div className="flex flex-wrap mt-[4vh]  items-start justify-start leading-tight">
-        <SplitText
+      <div
+        className="
+    mt-[4vh]
+
+    leading-tight
+    text-left
+  "
+      >
+        {/* <SplitText
           text="Love"
-          className="text-[#64FFDA] items-start justify-start  sm:text-lg md:text-xl lg:text-2xl font-semibold"
-          delay={50}
-          animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-          animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-          easing={(t) => t * (2 - t)}
-          threshold={0.2}
-          rootMargin="-50px"
-          onLetterAnimationComplete={handleAnimationComplete}
-        />
-
-        <SplitText
-          text="build impactful mobile and web applications "
-          className="text-[#6C7794] text-base sm:text-lg items-start justify-start md:text-xl lg:text-2xl font-semibold"
-          delay={10}
-          animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-          animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-          easing={(t) => t * (2 - t)}
-          threshold={0.2}
-          rootMargin="-50px"
-          onLetterAnimationComplete={handleAnimationComplete}
-        />
-
-        <SplitText
-          text="passionate full-stack and app"
-          className="text-[#6C7794] items-start justify-start text-base sm:text-lg md:text-xl lg:text-2xl font-semibold"
-          delay={10}
-          animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-          animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-          easing={(t) => t * (2 - t)}
-          threshold={0.2}
-          rootMargin="-50px"
-          onLetterAnimationComplete={handleAnimationComplete}
-        />
-
-        <SplitText
-          text="developer"
           className="text-[#64FFDA] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold"
           delay={50}
-          animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-          animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
           easing={(t) => t * (2 - t)}
           threshold={0.2}
           rootMargin="-50px"
           onLetterAnimationComplete={handleAnimationComplete}
-        />
+        /> */}
 
         <SplitText
-          text="crafting innovative products and experiences Dedicated"
-          className="text-[#6C7794] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold"
+          text="love build impactful mobile and web applications passionate full-stack and app crafting innovative products and experiences Dedicated to empowering startups and fostering"
+          className="text-[#6C7794] text-sm sm:text-base md:text-lg lg:text-xl font-semibold"
           delay={10}
-          animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-          animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
           easing={(t) => t * (2 - t)}
           threshold={0.2}
           rootMargin="-50px"
           onLetterAnimationComplete={handleAnimationComplete}
         />
 
+        {/* <SplitText
+          text="passionate full-stack and app crafting innovative products and experiences Dedicated to empowering startups and fostering"
+          className="text-[#6C7794] text-sm sm:text-base md:text-lg lg:text-xl font-semibold"
+          delay={10}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+          easing={(t) => t * (2 - t)}
+          threshold={0.2}
+          rootMargin="-50px"
+          onLetterAnimationComplete={handleAnimationComplete}
+        /> */}
+
+        {/* <SplitText
+          text="developer"
+          className="text-[#64FFDA] text-sm sm:text-base md:text-lg lg:text-xl font-semibold"
+          delay={50}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+          easing={(t) => t * (2 - t)}
+          threshold={0.2}
+          rootMargin="-50px"
+          onLetterAnimationComplete={handleAnimationComplete}
+        /> */}
+{/* 
         <SplitText
           text="to empowering startups and fostering"
-          className="text-[#6C7794] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold"
+          className="text-[#6C7794] text-sm sm:text-base md:text-lg lg:text-xl font-semibold"
           delay={10}
-          animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-          animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
           easing={(t) => t * (2 - t)}
           threshold={0.2}
           rootMargin="-50px"
           onLetterAnimationComplete={handleAnimationComplete}
-        />
-
+        /> */}
+{/* 
         <SplitText
           text="meaningful"
-          className="text-[#64FFDA] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold"
+          className="text-[#64FFDA] text-sm sm:text-base md:text-lg lg:text-xl font-semibold"
           delay={50}
-          animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-          animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
           easing={(t) => t * (2 - t)}
           threshold={0.2}
           rootMargin="-50px"
           onLetterAnimationComplete={handleAnimationComplete}
-        />
+        /> */}
       </div>
+
+
     </div>
   );
 };
